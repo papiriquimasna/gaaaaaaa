@@ -56,7 +56,7 @@ export default function DepartamentosCarousel() {
   const departamentos = departamentosData.map(d => d.nombre);
 
   useEffect(() => {
-    fetch('/src/features/Home/Main/Json/PeruDepartamento.geojson')
+    fetch('/PeruDepartamento.geojson')
       .then(response => response.json())
       .then(data => setGeoData(data))
       .catch(error => console.error('Error loading GeoJSON:', error));
