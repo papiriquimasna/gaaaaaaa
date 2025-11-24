@@ -22,32 +22,35 @@ export default function DepartamentosCarousel() {
       '#a3e635', '#4ade80', '#2dd4bf', '#22d3ee'
     ];
     
+    // Agregar votos simulados si no hay votos reales
+    const votosMinimos = totalVotos === 0 ? 150 : totalVotos;
+    
     const data = [
-      { nombre: 'Amazonas', nombreGeo: 'AMAZONAS', votos: Math.max(Math.floor(totalVotos * 0.02), 0), participacion: Math.max(participacionBase - 5, 0), color: colores[0] },
-      { nombre: 'Áncash', nombreGeo: 'ANCASH', votos: Math.max(Math.floor(totalVotos * 0.05), 0), participacion: Math.max(participacionBase + 2, 0), color: colores[1] },
-      { nombre: 'Apurímac', nombreGeo: 'APURIMAC', votos: Math.max(Math.floor(totalVotos * 0.03), 0), participacion: Math.max(participacionBase - 10, 0), color: colores[2] },
-      { nombre: 'Arequipa', nombreGeo: 'AREQUIPA', votos: Math.max(Math.floor(totalVotos * 0.07), 0), participacion: Math.max(participacionBase + 8, 0), color: colores[3] },
-      { nombre: 'Ayacucho', nombreGeo: 'AYACUCHO', votos: Math.max(Math.floor(totalVotos * 0.03), 0), participacion: Math.max(participacionBase, 0), color: colores[4] },
-      { nombre: 'Cajamarca', nombreGeo: 'CAJAMARCA', votos: Math.max(Math.floor(totalVotos * 0.04), 0), participacion: Math.max(participacionBase - 1, 0), color: colores[5] },
-      { nombre: 'Callao', nombreGeo: 'CALLAO', votos: Math.max(Math.floor(totalVotos * 0.06), 0), participacion: Math.max(participacionBase + 5, 0), color: colores[6] },
-      { nombre: 'Cusco', nombreGeo: 'CUSCO', votos: Math.max(Math.floor(totalVotos * 0.06), 0), participacion: Math.max(participacionBase + 3, 0), color: colores[7] },
-      { nombre: 'Huancavelica', nombreGeo: 'HUANCAVELICA', votos: Math.max(Math.floor(totalVotos * 0.02), 0), participacion: Math.max(participacionBase - 9, 0), color: colores[8] },
-      { nombre: 'Huánuco', nombreGeo: 'HUANUCO', votos: Math.max(Math.floor(totalVotos * 0.03), 0), participacion: Math.max(participacionBase - 3, 0), color: colores[9] },
-      { nombre: 'Ica', nombreGeo: 'ICA', votos: Math.max(Math.floor(totalVotos * 0.04), 0), participacion: Math.max(participacionBase + 4, 0), color: colores[10] },
-      { nombre: 'Junín', nombreGeo: 'JUNIN', votos: Math.max(Math.floor(totalVotos * 0.05), 0), participacion: Math.max(participacionBase + 1, 0), color: colores[11] },
-      { nombre: 'La Libertad', nombreGeo: 'LA LIBERTAD', votos: Math.max(Math.floor(totalVotos * 0.08), 0), participacion: Math.max(participacionBase + 6, 0), color: colores[12] },
-      { nombre: 'Lambayeque', nombreGeo: 'LAMBAYEQUE', votos: Math.max(Math.floor(totalVotos * 0.05), 0), participacion: Math.max(participacionBase + 3, 0), color: colores[13] },
-      { nombre: 'Lima', nombreGeo: 'LIMA', votos: Math.max(Math.floor(totalVotos * 0.24), 0), participacion: Math.max(participacionBase + 9, 0), color: colores[14] },
-      { nombre: 'Loreto', nombreGeo: 'LORETO', votos: Math.max(Math.floor(totalVotos * 0.03), 0), participacion: Math.max(participacionBase - 11, 0), color: colores[15] },
-      { nombre: 'Madre de Dios', nombreGeo: 'MADRE DE DIOS', votos: Math.max(Math.floor(totalVotos * 0.01), 0), participacion: Math.max(participacionBase - 13, 0), color: colores[16] },
-      { nombre: 'Moquegua', nombreGeo: 'MOQUEGUA', votos: Math.max(Math.floor(totalVotos * 0.02), 0), participacion: Math.max(participacionBase + 1, 0), color: colores[17] },
-      { nombre: 'Pasco', nombreGeo: 'PASCO', votos: Math.max(Math.floor(totalVotos * 0.02), 0), participacion: Math.max(participacionBase - 2, 0), color: colores[18] },
-      { nombre: 'Piura', nombreGeo: 'PIURA', votos: Math.max(Math.floor(totalVotos * 0.07), 0), participacion: Math.max(participacionBase + 5, 0), color: colores[19] },
-      { nombre: 'Puno', nombreGeo: 'PUNO', votos: Math.max(Math.floor(totalVotos * 0.06), 0), participacion: Math.max(participacionBase, 0), color: colores[20] },
-      { nombre: 'San Martín', nombreGeo: 'SAN MARTIN', votos: Math.max(Math.floor(totalVotos * 0.04), 0), participacion: Math.max(participacionBase - 1, 0), color: colores[21] },
-      { nombre: 'Tacna', nombreGeo: 'TACNA', votos: Math.max(Math.floor(totalVotos * 0.02), 0), participacion: Math.max(participacionBase + 7, 0), color: colores[22] },
-      { nombre: 'Tumbes', nombreGeo: 'TUMBES', votos: Math.max(Math.floor(totalVotos * 0.01), 0), participacion: Math.max(participacionBase + 2, 0), color: colores[23] },
-      { nombre: 'Ucayali', nombreGeo: 'UCAYALI', votos: Math.max(Math.floor(totalVotos * 0.03), 0), participacion: Math.max(participacionBase - 10, 0), color: colores[24] }
+      { nombre: 'Amazonas', nombreGeo: 'AMAZONAS', votos: Math.max(Math.floor(votosMinimos * 0.02), 3), participacion: Math.max(participacionBase - 5, 20), color: colores[0] },
+      { nombre: 'Áncash', nombreGeo: 'ANCASH', votos: Math.max(Math.floor(votosMinimos * 0.05), 8), participacion: Math.max(participacionBase + 2, 35), color: colores[1] },
+      { nombre: 'Apurímac', nombreGeo: 'APURIMAC', votos: Math.max(Math.floor(votosMinimos * 0.03), 5), participacion: Math.max(participacionBase - 10, 15), color: colores[2] },
+      { nombre: 'Arequipa', nombreGeo: 'AREQUIPA', votos: Math.max(Math.floor(votosMinimos * 0.07), 11), participacion: Math.max(participacionBase + 8, 45), color: colores[3] },
+      { nombre: 'Ayacucho', nombreGeo: 'AYACUCHO', votos: Math.max(Math.floor(votosMinimos * 0.03), 5), participacion: Math.max(participacionBase, 25), color: colores[4] },
+      { nombre: 'Cajamarca', nombreGeo: 'CAJAMARCA', votos: Math.max(Math.floor(votosMinimos * 0.04), 6), participacion: Math.max(participacionBase - 1, 28), color: colores[5] },
+      { nombre: 'Callao', nombreGeo: 'CALLAO', votos: Math.max(Math.floor(votosMinimos * 0.06), 9), participacion: Math.max(participacionBase + 5, 40), color: colores[6] },
+      { nombre: 'Cusco', nombreGeo: 'CUSCO', votos: Math.max(Math.floor(votosMinimos * 0.06), 9), participacion: Math.max(participacionBase + 3, 38), color: colores[7] },
+      { nombre: 'Huancavelica', nombreGeo: 'HUANCAVELICA', votos: Math.max(Math.floor(votosMinimos * 0.02), 3), participacion: Math.max(participacionBase - 9, 18), color: colores[8] },
+      { nombre: 'Huánuco', nombreGeo: 'HUANUCO', votos: Math.max(Math.floor(votosMinimos * 0.03), 5), participacion: Math.max(participacionBase - 3, 22), color: colores[9] },
+      { nombre: 'Ica', nombreGeo: 'ICA', votos: Math.max(Math.floor(votosMinimos * 0.04), 6), participacion: Math.max(participacionBase + 4, 42), color: colores[10] },
+      { nombre: 'Junín', nombreGeo: 'JUNIN', votos: Math.max(Math.floor(votosMinimos * 0.05), 8), participacion: Math.max(participacionBase + 1, 32), color: colores[11] },
+      { nombre: 'La Libertad', nombreGeo: 'LA LIBERTAD', votos: Math.max(Math.floor(votosMinimos * 0.08), 12), participacion: Math.max(participacionBase + 6, 48), color: colores[12] },
+      { nombre: 'Lambayeque', nombreGeo: 'LAMBAYEQUE', votos: Math.max(Math.floor(votosMinimos * 0.05), 8), participacion: Math.max(participacionBase + 3, 36), color: colores[13] },
+      { nombre: 'Lima', nombreGeo: 'LIMA', votos: Math.max(Math.floor(votosMinimos * 0.24), 36), participacion: Math.max(participacionBase + 9, 55), color: colores[14] },
+      { nombre: 'Loreto', nombreGeo: 'LORETO', votos: Math.max(Math.floor(votosMinimos * 0.03), 5), participacion: Math.max(participacionBase - 11, 12), color: colores[15] },
+      { nombre: 'Madre de Dios', nombreGeo: 'MADRE DE DIOS', votos: Math.max(Math.floor(votosMinimos * 0.01), 2), participacion: Math.max(participacionBase - 13, 10), color: colores[16] },
+      { nombre: 'Moquegua', nombreGeo: 'MOQUEGUA', votos: Math.max(Math.floor(votosMinimos * 0.02), 3), participacion: Math.max(participacionBase + 1, 30), color: colores[17] },
+      { nombre: 'Pasco', nombreGeo: 'PASCO', votos: Math.max(Math.floor(votosMinimos * 0.02), 3), participacion: Math.max(participacionBase - 2, 24), color: colores[18] },
+      { nombre: 'Piura', nombreGeo: 'PIURA', votos: Math.max(Math.floor(votosMinimos * 0.07), 11), participacion: Math.max(participacionBase + 5, 44), color: colores[19] },
+      { nombre: 'Puno', nombreGeo: 'PUNO', votos: Math.max(Math.floor(votosMinimos * 0.06), 9), participacion: Math.max(participacionBase, 26), color: colores[20] },
+      { nombre: 'San Martín', nombreGeo: 'SAN MARTIN', votos: Math.max(Math.floor(votosMinimos * 0.04), 6), participacion: Math.max(participacionBase - 1, 27), color: colores[21] },
+      { nombre: 'Tacna', nombreGeo: 'TACNA', votos: Math.max(Math.floor(votosMinimos * 0.02), 3), participacion: Math.max(participacionBase + 7, 50), color: colores[22] },
+      { nombre: 'Tumbes', nombreGeo: 'TUMBES', votos: Math.max(Math.floor(votosMinimos * 0.01), 2), participacion: Math.max(participacionBase + 2, 34), color: colores[23] },
+      { nombre: 'Ucayali', nombreGeo: 'UCAYALI', votos: Math.max(Math.floor(votosMinimos * 0.03), 5), participacion: Math.max(participacionBase - 10, 16), color: colores[24] }
     ];
     
     setDepartamentosData(data);

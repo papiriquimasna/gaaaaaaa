@@ -17,48 +17,39 @@ import {
 } from "@/components/ui/select";
 import { dataService } from '../../../../services/dataService';
 
-// Generar datos de sesiones basados en usuarios y votos reales
-const generateChartData = () => {
-  const data = [];
-  const today = new Date();
-  const usuarios = dataService.getUsuarios();
-  const votos = dataService.getVotos();
-  
-  // Calcular sesiones diarias basadas en datos reales
-  const totalUsuarios = usuarios.length;
-  const sesionesPromedioDia = Math.max(2, Math.floor(totalUsuarios / 10)); // Promedio realista
-  
-  // Generar datos para los últimos 30 días
-  for (let i = 29; i >= 0; i--) {
-    const date = new Date(today);
-    date.setDate(date.getDate() - i);
-    const dateStr = date.toISOString().split('T')[0];
-    
-    // Contar votos de ese día para estimar actividad
-    const votosDelDia = votos.filter(voto => {
-      const votoDate = new Date(voto.fecha);
-      return votoDate.toISOString().split('T')[0] === dateStr;
-    }).length;
-    
-    // Calcular sesiones: votos + actividad base
-    const actividadBase = Math.floor(sesionesPromedioDia * (0.5 + Math.random() * 0.5));
-    const totalSesiones = votosDelDia + actividadBase;
-    
-    // Distribución 60% desktop, 40% mobile
-    const desktop = Math.floor(totalSesiones * 0.6);
-    const mobile = totalSesiones - desktop;
-    
-    data.push({
-      date: dateStr,
-      desktop: Math.max(0, desktop),
-      mobile: Math.max(0, mobile)
-    });
-  }
-  
-  return data;
-};
-
-const chartData = generateChartData();
+// Datos simulados de sesiones
+const chartData = [
+  { date: "2024-10-26", desktop: 186, mobile: 80 },
+  { date: "2024-10-27", desktop: 305, mobile: 200 },
+  { date: "2024-10-28", desktop: 237, mobile: 120 },
+  { date: "2024-10-29", desktop: 173, mobile: 190 },
+  { date: "2024-10-30", desktop: 209, mobile: 130 },
+  { date: "2024-10-31", desktop: 214, mobile: 140 },
+  { date: "2024-11-01", desktop: 195, mobile: 165 },
+  { date: "2024-11-02", desktop: 220, mobile: 175 },
+  { date: "2024-11-03", desktop: 189, mobile: 145 },
+  { date: "2024-11-04", desktop: 245, mobile: 195 },
+  { date: "2024-11-05", desktop: 267, mobile: 210 },
+  { date: "2024-11-06", desktop: 198, mobile: 155 },
+  { date: "2024-11-07", desktop: 234, mobile: 180 },
+  { date: "2024-11-08", desktop: 276, mobile: 220 },
+  { date: "2024-11-09", desktop: 289, mobile: 235 },
+  { date: "2024-11-10", desktop: 312, mobile: 250 },
+  { date: "2024-11-11", desktop: 298, mobile: 240 },
+  { date: "2024-11-12", desktop: 265, mobile: 205 },
+  { date: "2024-11-13", desktop: 243, mobile: 185 },
+  { date: "2024-11-14", desktop: 287, mobile: 225 },
+  { date: "2024-11-15", desktop: 321, mobile: 260 },
+  { date: "2024-11-16", desktop: 334, mobile: 275 },
+  { date: "2024-11-17", desktop: 356, mobile: 290 },
+  { date: "2024-11-18", desktop: 378, mobile: 310 },
+  { date: "2024-11-19", desktop: 392, mobile: 325 },
+  { date: "2024-11-20", desktop: 405, mobile: 340 },
+  { date: "2024-11-21", desktop: 418, mobile: 355 },
+  { date: "2024-11-22", desktop: 432, mobile: 370 },
+  { date: "2024-11-23", desktop: 445, mobile: 385 },
+  { date: "2024-11-24", desktop: 458, mobile: 400 },
+];
 
 const chartConfig = {
   visitors: {
