@@ -5,8 +5,6 @@ import ReclamacionesCard from '../components/ReclamacionesCard';
 import VotosDonutChart from '../components/VotosDonutChart';
 import SessionsAreaChart from '../components/SessionsAreaChart';
 import DepartamentosCarousel from '../components/DepartamentosCarousel';
-import VotosPorPartidoChart from '../components/VotosPorPartidoChart';
-import UsuariosRegistradosChart from '../components/UsuariosRegistradosChart';
 import { AccionesRecientes } from '../components/AccionesRecientes';
 import DefaultPerfil from '../../../../assets/defaultperfil.jpg';
 import { useUser } from '../../../../context/UserContext';
@@ -61,15 +59,6 @@ export default function Home() {
           {/* Sessions Chart - Full Width */}
           <div className="col-span-1 lg:col-span-6">
             <SessionsAreaChart />
-          </div>
-
-          {/* Additional Charts */}
-          <div className="col-span-1 lg:col-span-3">
-            <VotosPorPartidoChart />
-          </div>
-          
-          <div className="col-span-1 lg:col-span-3">
-            <UsuariosRegistradosChart />
           </div>
 
           {/* Acciones Recientes - Bottom */}
