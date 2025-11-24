@@ -6,7 +6,6 @@ export interface Candidato {
   nombre: string;
   apellidoPaterno: string;
   apellidoMaterno: string;
-  dni: string;
   partidoId: string;
   tipo: 'presidente' | 'alcalde';
   foto: string;
@@ -61,33 +60,33 @@ const PARTIDOS_INICIALES: PartidoPolitico[] = [
 ];
 
 const CANDIDATOS_PRESIDENTES_INICIALES: Candidato[] = [
-  { id: 'cp1', nombre: 'Martín', apellidoPaterno: 'Vizcarra', apellidoMaterno: 'Cornejo', dni: '09876543', partidoId: 'p1', tipo: 'presidente', foto: '/candidatos/Vizcarra.jpg' },
-  { id: 'cp2', nombre: 'George', apellidoPaterno: 'Forsyth', apellidoMaterno: 'Sommer', dni: '09876544', partidoId: 'p2', tipo: 'presidente', foto: '/candidatos/George.png' },
-  { id: 'cp3', nombre: 'César', apellidoPaterno: 'Acuña', apellidoMaterno: 'Peralta', dni: '09876545', partidoId: 'p3', tipo: 'presidente', foto: '/candidatos/Acuna.jpg' },
-  { id: 'cp4', nombre: 'Keiko', apellidoPaterno: 'Fujimori', apellidoMaterno: 'Higuchi', dni: '09876546', partidoId: 'p4', tipo: 'presidente', foto: '/candidatos/Keiko.jpg' },
-  { id: 'cp5', nombre: 'Verónika', apellidoPaterno: 'Mendoza', apellidoMaterno: 'Frisch', dni: '09876547', partidoId: 'p5', tipo: 'presidente', foto: '/candidatos/Veronika.jpg' },
-  { id: 'cp6', nombre: 'Rafael', apellidoPaterno: 'López Aliaga', apellidoMaterno: '', dni: '09876548', partidoId: 'p6', tipo: 'presidente', foto: '/candidatos/Rafael.jpg' },
-  { id: 'cp7', nombre: 'Hernando', apellidoPaterno: 'de Soto', apellidoMaterno: 'Polar', dni: '09876549', partidoId: 'p7', tipo: 'presidente', foto: '/candidatos/Hernando.jpg' },
-  { id: 'cp8', nombre: 'Yonhy', apellidoPaterno: 'Lescano', apellidoMaterno: 'Ancieta', dni: '09876550', partidoId: 'p8', tipo: 'presidente', foto: '/candidatos/Yonhy.jpg' },
-  { id: 'cp9', nombre: 'Daniel', apellidoPaterno: 'Urresti', apellidoMaterno: 'Elera', dni: '09876551', partidoId: 'p9', tipo: 'presidente', foto: '/candidatos/Daniel.jpg' },
-  { id: 'cp10', nombre: 'Julio', apellidoPaterno: 'Guzmán', apellidoMaterno: 'Cáceres', dni: '09876552', partidoId: 'p1', tipo: 'presidente', foto: '/candidatos/Julio.jpg' },
-  { id: 'cp11', nombre: 'Alberto', apellidoPaterno: 'Beingolea', apellidoMaterno: 'Delgado', dni: '09876553', partidoId: 'p11', tipo: 'presidente', foto: '/candidatos/Alberto.jpg' },
-  { id: 'cp12', nombre: 'Marco', apellidoPaterno: 'Arana', apellidoMaterno: 'Zegarra', dni: '09876554', partidoId: 'p12', tipo: 'presidente', foto: '/candidatos/Marco.jpg' },
+  { id: 'cp1', nombre: 'Martín', apellidoPaterno: 'Vizcarra', apellidoMaterno: 'Cornejo', partidoId: 'p1', tipo: 'presidente', foto: '/candidatos/Vizcarra.jpg' },
+  { id: 'cp2', nombre: 'George', apellidoPaterno: 'Forsyth', apellidoMaterno: 'Sommer', partidoId: 'p2', tipo: 'presidente', foto: '/candidatos/George.png' },
+  { id: 'cp3', nombre: 'César', apellidoPaterno: 'Acuña', apellidoMaterno: 'Peralta', partidoId: 'p3', tipo: 'presidente', foto: '/candidatos/Acuna.jpg' },
+  { id: 'cp4', nombre: 'Keiko', apellidoPaterno: 'Fujimori', apellidoMaterno: 'Higuchi', partidoId: 'p4', tipo: 'presidente', foto: '/candidatos/Keiko.jpg' },
+  { id: 'cp5', nombre: 'Verónika', apellidoPaterno: 'Mendoza', apellidoMaterno: 'Frisch', partidoId: 'p5', tipo: 'presidente', foto: '/candidatos/Veronika.jpg' },
+  { id: 'cp6', nombre: 'Rafael', apellidoPaterno: 'López Aliaga', apellidoMaterno: '', partidoId: 'p6', tipo: 'presidente', foto: '/candidatos/Rafael.jpg' },
+  { id: 'cp7', nombre: 'Hernando', apellidoPaterno: 'de Soto', apellidoMaterno: 'Polar', partidoId: 'p7', tipo: 'presidente', foto: '/candidatos/Hernando.jpg' },
+  { id: 'cp8', nombre: 'Yonhy', apellidoPaterno: 'Lescano', apellidoMaterno: 'Ancieta', partidoId: 'p8', tipo: 'presidente', foto: '/candidatos/Yonhy.jpg' },
+  { id: 'cp9', nombre: 'Daniel', apellidoPaterno: 'Urresti', apellidoMaterno: 'Elera', partidoId: 'p9', tipo: 'presidente', foto: '/candidatos/Daniel.jpg' },
+  { id: 'cp10', nombre: 'Julio', apellidoPaterno: 'Guzmán', apellidoMaterno: 'Cáceres', partidoId: 'p1', tipo: 'presidente', foto: '/candidatos/Julio.jpg' },
+  { id: 'cp11', nombre: 'Alberto', apellidoPaterno: 'Beingolea', apellidoMaterno: 'Delgado', partidoId: 'p11', tipo: 'presidente', foto: '/candidatos/Alberto.jpg' },
+  { id: 'cp12', nombre: 'Marco', apellidoPaterno: 'Arana', apellidoMaterno: 'Zegarra', partidoId: 'p12', tipo: 'presidente', foto: '/candidatos/Marco.jpg' },
 ];
 
 const CANDIDATOS_ALCALDES_INICIALES: Candidato[] = [
-  { id: 'ca1', nombre: 'Rafael', apellidoPaterno: 'López Aliaga', apellidoMaterno: '', dni: '08876543', partidoId: 'p6', tipo: 'alcalde', foto: '/candidatos/Rafael.jpg' },
-  { id: 'ca2', nombre: 'Daniel', apellidoPaterno: 'Urresti', apellidoMaterno: 'Elera', dni: '08876544', partidoId: 'p9', tipo: 'alcalde', foto: '/candidatos/Daniel.jpg' },
-  { id: 'ca3', nombre: 'Yuri', apellidoPaterno: 'Castro', apellidoMaterno: 'Romero', dni: '08876545', partidoId: 'p5', tipo: 'alcalde', foto: '/candidatos/Yuri.jpg' },
-  { id: 'ca4', nombre: 'Omar', apellidoPaterno: 'Chehade', apellidoMaterno: 'Moya', dni: '08876546', partidoId: 'p3', tipo: 'alcalde', foto: '/candidatos/Omar.jpg' },
-  { id: 'ca5', nombre: 'Elizabeth', apellidoPaterno: 'León', apellidoMaterno: 'Minaya', dni: '08876547', partidoId: 'p10', tipo: 'alcalde', foto: '/candidatos/Elizabeth.jpg' },
-  { id: 'ca6', nombre: 'Marco Tulio', apellidoPaterno: 'Gutiérrez', apellidoMaterno: 'Varas', dni: '08876548', partidoId: 'p7', tipo: 'alcalde', foto: '/candidatos/Marco Tulio.jpg' },
-  { id: 'ca7', nombre: 'George', apellidoPaterno: 'Forsyth', apellidoMaterno: 'Sommer', dni: '08876549', partidoId: 'p2', tipo: 'alcalde', foto: '/candidatos/George Forsyth.png' },
-  { id: 'ca8', nombre: 'Gonzalo', apellidoPaterno: 'Alegría', apellidoMaterno: 'Varona', dni: '08876550', partidoId: 'p1', tipo: 'alcalde', foto: '/candidatos/Gonzalo Alegria.jpg' },
-  { id: 'ca9', nombre: 'Renzo', apellidoPaterno: 'Reggiardo', apellidoMaterno: 'Barreto', dni: '08876551', partidoId: 'p13', tipo: 'alcalde', foto: '/candidatos/Renzo.jpg' },
-  { id: 'ca10', nombre: 'Alberto', apellidoPaterno: 'Beingolea', apellidoMaterno: 'Delgado', dni: '08876552', partidoId: 'p11', tipo: 'alcalde', foto: '/candidatos/Alberto Beingolea.jpg' },
-  { id: 'ca11', nombre: 'Enrique', apellidoPaterno: 'Ocrospoma', apellidoMaterno: 'Pella', dni: '08876553', partidoId: 'p8', tipo: 'alcalde', foto: '/candidatos/Enrique Ocrospoma.jpg' },
-  { id: 'ca12', nombre: 'Susel', apellidoPaterno: 'Paredes', apellidoMaterno: 'Piqué', dni: '08876554', partidoId: 'p4', tipo: 'alcalde', foto: '/candidatos/Susel Paredes.jpg' },
+  { id: 'ca1', nombre: 'Rafael', apellidoPaterno: 'López Aliaga', apellidoMaterno: '', partidoId: 'p6', tipo: 'alcalde', foto: '/candidatos/Rafael.jpg' },
+  { id: 'ca2', nombre: 'Daniel', apellidoPaterno: 'Urresti', apellidoMaterno: 'Elera', partidoId: 'p9', tipo: 'alcalde', foto: '/candidatos/Daniel.jpg' },
+  { id: 'ca3', nombre: 'Yuri', apellidoPaterno: 'Castro', apellidoMaterno: 'Romero', partidoId: 'p5', tipo: 'alcalde', foto: '/candidatos/Yuri.jpg' },
+  { id: 'ca4', nombre: 'Omar', apellidoPaterno: 'Chehade', apellidoMaterno: 'Moya', partidoId: 'p3', tipo: 'alcalde', foto: '/candidatos/Omar.jpg' },
+  { id: 'ca5', nombre: 'Elizabeth', apellidoPaterno: 'León', apellidoMaterno: 'Minaya', partidoId: 'p10', tipo: 'alcalde', foto: '/candidatos/Elizabeth.jpg' },
+  { id: 'ca6', nombre: 'Marco Tulio', apellidoPaterno: 'Gutiérrez', apellidoMaterno: 'Varas', partidoId: 'p7', tipo: 'alcalde', foto: '/candidatos/Marco Tulio.jpg' },
+  { id: 'ca7', nombre: 'George', apellidoPaterno: 'Forsyth', apellidoMaterno: 'Sommer', partidoId: 'p2', tipo: 'alcalde', foto: '/candidatos/George Forsyth.png' },
+  { id: 'ca8', nombre: 'Gonzalo', apellidoPaterno: 'Alegría', apellidoMaterno: 'Varona', partidoId: 'p1', tipo: 'alcalde', foto: '/candidatos/Gonzalo Alegria.jpg' },
+  { id: 'ca9', nombre: 'Renzo', apellidoPaterno: 'Reggiardo', apellidoMaterno: 'Barreto', partidoId: 'p13', tipo: 'alcalde', foto: '/candidatos/Renzo.jpg' },
+  { id: 'ca10', nombre: 'Alberto', apellidoPaterno: 'Beingolea', apellidoMaterno: 'Delgado', partidoId: 'p11', tipo: 'alcalde', foto: '/candidatos/Alberto Beingolea.jpg' },
+  { id: 'ca11', nombre: 'Enrique', apellidoPaterno: 'Ocrospoma', apellidoMaterno: 'Pella', partidoId: 'p8', tipo: 'alcalde', foto: '/candidatos/Enrique Ocrospoma.jpg' },
+  { id: 'ca12', nombre: 'Susel', apellidoPaterno: 'Paredes', apellidoMaterno: 'Piqué', partidoId: 'p4', tipo: 'alcalde', foto: '/candidatos/Susel Paredes.jpg' },
 ];
 
 const USUARIOS_INICIALES: Usuario[] = [
