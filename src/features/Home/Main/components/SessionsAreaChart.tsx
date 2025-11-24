@@ -17,12 +17,16 @@ import {
 } from "@/components/ui/select";
 import { dataService } from '../../../../services/dataService';
 
-// Generar datos de sesiones basados en datos reales
+// Generar datos de sesiones basados en usuarios y votos reales
 const generateChartData = () => {
   const data = [];
   const today = new Date();
-  const estadisticas = dataService.getEstadisticas();
-  const totalVotos = estadisticas.totalVotos;
+  const usuarios = dataService.getUsuarios();
+  const votos = dataService.getVotos();
+  
+  // Calcular sesiones diarias basadas en datos reales
+  const totalUsuarios = usuarios.length;
+  const sesionesPromedioDia = Math.max(2, Math.floor(totalUsuarios / 10)); // Promedio realista
   
   // Generar datos para los últimos 30 días
   for (let i = 29; i >= 0; i--) {
@@ -30,16 +34,24 @@ const generateChartData = () => {
     date.setDate(date.getDate() - i);
     const dateStr = date.toISOString().split('T')[0];
     
-    // Simular distribución de votos a lo largo del mes
-    // Los días más cercanos tienen más actividad
-    const factor = i < 7 ? 1.5 : i < 14 ? 1.2 : 0.8;
-    const baseValue = Math.floor((totalVotos / 30) * factor);
-    const variation = Math.floor(Math.random() * 50);
+    // Contar votos de ese día para estimar actividad
+    const votosDelDia = votos.filter(voto => {
+      const votoDate = new Date(voto.fecha);
+      return votoDate.toISOString().split('T')[0] === dateStr;
+    }).length;
+    
+    // Calcular sesiones: votos + actividad base
+    const actividadBase = Math.floor(sesionesPromedioDia * (0.5 + Math.random() * 0.5));
+    const totalSesiones = votosDelDia + actividadBase;
+    
+    // Distribución 60% desktop, 40% mobile
+    const desktop = Math.floor(totalSesiones * 0.6);
+    const mobile = totalSesiones - desktop;
     
     data.push({
       date: dateStr,
-      desktop: Math.max(0, baseValue + variation),
-      mobile: Math.max(0, Math.floor((baseValue + variation) * 0.6))
+      desktop: Math.max(0, desktop),
+      mobile: Math.max(0, mobile)
     });
   }
   
