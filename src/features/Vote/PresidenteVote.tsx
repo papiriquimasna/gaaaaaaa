@@ -13,7 +13,6 @@ import {
 } from '@heroui/react';
 import { dataService, Candidato, PartidoPolitico } from '../../services/dataService';
 import { useAcciones } from '../../context/AccionesContext';
-import LogoVoto from '../../assetss/LogoVoto.png';
 
 interface CandidatoConPartido extends Candidato {
   partido: PartidoPolitico | null;
@@ -114,7 +113,7 @@ const PresidenteVote = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <img src={LogoVoto} alt="Voto Digital" className="h-24 drop-shadow-lg" />
+            <img src="/candidatos/LogoVoto.png" alt="Voto Digital" className="h-24 drop-shadow-lg" />
           </div>
           <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">Elección Presidencial</h1>
           <p className="text-slate-600 dark:text-gray-300">Selecciona tu candidato preferido</p>

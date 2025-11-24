@@ -12,33 +12,20 @@ import {
   Pagination,
 } from '@heroui/react';
 import { useAcciones } from '../../context/AccionesContext';
-import LogoVoto from '../../assetss/LogoVoto.png';
-import Rafael from '../../assetss/Rafael.jpg';
-import Daniel from '../../assetss/Daniel.jpg';
-import Yuri from '../../assetss/Yuri.jpg';
-import Omar from '../../assetss/Omar.jpg';
-import Elizabeth from '../../assetss/Elizabeth.jpg';
-import MarcoTulio from '../../assetss/Marco Tulio.jpg';
-import GeorgeForsyth from '../../assetss/George Forsyth.png';
-import GonzaloAlegria from '../../assetss/Gonzalo Alegria.jpg';
-import Renzo from '../../assetss/Renzo.jpg';
-import AlbertoBeingolea from '../../assetss/Alberto Beingolea.jpg';
-import EnriqueOcrospoma from '../../assetss/Enrique Ocrospoma.jpg';
-import SuselParedes from '../../assetss/Susel Paredes.jpg';
 
 const candidatos = [
-  { id: 1, nombre: 'Rafael López Aliaga', partido: 'Renovación Popular', imagen: Rafael },
-  { id: 2, nombre: 'Daniel Urresti', partido: 'Podemos Perú', imagen: Daniel },
-  { id: 3, nombre: 'Yuri Castro', partido: 'Juntos por el Perú', imagen: Yuri },
-  { id: 4, nombre: 'Omar Chehade', partido: 'Alianza Para el Progreso', imagen: Omar },
-  { id: 5, nombre: 'Elizabeth León', partido: 'Somos Perú', imagen: Elizabeth },
-  { id: 6, nombre: 'Marco Tulio Gutiérrez', partido: 'Avanza País', imagen: MarcoTulio },
-  { id: 7, nombre: 'George Forsyth', partido: 'Victoria Nacional', imagen: GeorgeForsyth },
-  { id: 8, nombre: 'Gonzalo Alegría', partido: 'Partido Morado', imagen: GonzaloAlegria },
-  { id: 9, nombre: 'Renzo Reggiardo', partido: 'Perú Patria Segura', imagen: Renzo },
-  { id: 10, nombre: 'Alberto Beingolea', partido: 'Partido Popular Cristiano', imagen: AlbertoBeingolea },
-  { id: 11, nombre: 'Enrique Ocrospoma', partido: 'Acción Popular', imagen: EnriqueOcrospoma },
-  { id: 12, nombre: 'Susel Paredes', partido: 'Fuerza Popular', imagen: SuselParedes },
+  { id: 1, nombre: 'Rafael López Aliaga', partido: 'Renovación Popular', imagen: '/candidatos/Rafael.jpg' },
+  { id: 2, nombre: 'Daniel Urresti', partido: 'Podemos Perú', imagen: '/candidatos/Daniel.jpg' },
+  { id: 3, nombre: 'Yuri Castro', partido: 'Juntos por el Perú', imagen: '/candidatos/Yuri.jpg' },
+  { id: 4, nombre: 'Omar Chehade', partido: 'Alianza Para el Progreso', imagen: '/candidatos/Omar.jpg' },
+  { id: 5, nombre: 'Elizabeth León', partido: 'Somos Perú', imagen: '/candidatos/Elizabeth.jpg' },
+  { id: 6, nombre: 'Marco Tulio Gutiérrez', partido: 'Avanza País', imagen: '/candidatos/Marco Tulio.jpg' },
+  { id: 7, nombre: 'George Forsyth', partido: 'Victoria Nacional', imagen: '/candidatos/George Forsyth.png' },
+  { id: 8, nombre: 'Gonzalo Alegría', partido: 'Partido Morado', imagen: '/candidatos/Gonzalo Alegria.jpg' },
+  { id: 9, nombre: 'Renzo Reggiardo', partido: 'Perú Patria Segura', imagen: '/candidatos/Renzo.jpg' },
+  { id: 10, nombre: 'Alberto Beingolea', partido: 'Partido Popular Cristiano', imagen: '/candidatos/Alberto Beingolea.jpg' },
+  { id: 11, nombre: 'Enrique Ocrospoma', partido: 'Acción Popular', imagen: '/candidatos/Enrique Ocrospoma.jpg' },
+  { id: 12, nombre: 'Susel Paredes', partido: 'Fuerza Popular', imagen: '/candidatos/Susel Paredes.jpg' },
 ];
 
 const AlcaldeVote = () => {
@@ -124,7 +111,7 @@ const AlcaldeVote = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <img src={LogoVoto} alt="Voto Digital" className="h-24 drop-shadow-lg" />
+            <img src="/candidatos/LogoVoto.png" alt="Voto Digital" className="h-24 drop-shadow-lg" />
           </div>
           <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">Elección de Alcalde</h1>
           <p className="text-slate-600 dark:text-gray-300">Selecciona tu candidato preferido</p>
