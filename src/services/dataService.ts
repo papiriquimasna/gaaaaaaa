@@ -224,6 +224,11 @@ class DataService {
     return allVotos;
   }
 
+  // Alias para compatibilidad
+  getVotos(): Voto[] {
+    return this.getAllVotos();
+  }
+
   // ========== DATOS DE USUARIO (Perfil, configuraciones, etc.) ==========
   getUserData(usuarioDni: string): any {
     const key = `${this.KEYS.USER_DATA_PREFIX}${usuarioDni}_data`;
